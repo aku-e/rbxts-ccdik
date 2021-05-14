@@ -1,4 +1,8 @@
-declare const ConstraintsMap: Map<Motor6D, Map<string, unknown>>;
+interface ConstraintInfo {
+	ConstraintType: keyof Constraint;
+}
+
+declare const ConstraintsMap: Map<Motor6D, ConstraintInfo>;
 
 type CCDIKController = {
 	Constraints: typeof ConstraintsMap | undefined;
