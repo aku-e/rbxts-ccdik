@@ -6,8 +6,8 @@
   "typings": "src/index.d.ts",
   "homepage": "https://datlass.github.io/Rbx-CCDIK/",
   "repository": {
-	  "type": "git",
-	  "url": "https://github.com/aku-e/rbxts-ccdik-controller.git"
+    "type": "git",
+    "url": "https://github.com/aku-e/rbxts-ccdik-controller.git"
   },
   "scripts": {},
   "license": "ISC",
