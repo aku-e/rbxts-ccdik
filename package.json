@@ -2,8 +2,8 @@
   "name": "@rbxts/ccdik",
   "version": "0.0.1",
   "description": "CCDIK algorithm ported to Roblox for use with Motor6D Instances",
-  "main": "src/init.lua",
-  "typings": "src/index.d.ts",
+  "main": "CCDIKController/init.lua",
+  "typings": "CCDIKController/index.d.ts",
   "homepage": "https://datlass.github.io/Rbx-CCDIK/",
   "repository": {
     "type": "git",
