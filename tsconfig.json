@@ -15,9 +15,9 @@
 		"typeRoots": ["node_modules/@rbxts"],
 
 		// configurable
-		"rootDir": "src",
+		"rootDir": "CCDIKController",
 		"outDir": "out",
-		"baseUrl": "src",
+		"baseUrl": "CCDIKController",
 		"incremental": true,
 		"tsBuildInfoFile": "out/tsconfig.tsbuildinfo",
 		"declaration": true
