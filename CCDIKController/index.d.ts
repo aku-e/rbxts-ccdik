@@ -1,5 +1,5 @@
 interface ConstraintInfo {
-	ConstraintType: keyof Constraint;
+	ConstraintType: string;
 }
 
 declare const ConstraintsMap: Map<Motor6D, ConstraintInfo>;
