@@ -1,15 +1,16 @@
-interface ConstraintInfo {
-	ConstraintType: string;
-}
-
-declare const ConstraintsMap: Map<Motor6D, ConstraintInfo>;
-
+type ConstraintTypes = "BallSocketConstraint" | "Hinge";
+type ConstraintsMap = Map<Motor6D, ConstraintInfo>;
 type CCDIKController = {
-	Constraints: typeof ConstraintsMap | undefined;
+	Constraints: ConstraintsMap | undefined;
 	LerpMode: boolean;
+	DebugMode: boolean;
 	LerpAlpha: number;
-	ConstantLerpSpeed: number;
+	ConstantLerpSpeed: boolean;
 	AngularSpeed: number;
+	UseLastMotor: boolean;
+	RaycastLengthDown: number;
+	FootRaycastParams: RaycastParams;
+	FootOrientationSystem: boolean;
 
 	GetConstraints(): void;
 	GetConstraintsFromMotor(Motor6D: Motor6D, constraintName: string): void;
@@ -25,8 +26,13 @@ type CCDIKController = {
 };
 
 interface CCDIKConstructor {
-	new (Motor6DArray: Array<Motor6D>, ConstraintsDictionary?: typeof ConstraintsMap): CCDIKController;
-}
-declare const CCDIKController: CCDIKConstructor;
+	new (Motor6DArray: Array<Motor6D>, ConstraintsDictionary?: ConstraintsMap): CCDIKController;
 
-export = CCDIKController;
+	ConstraintInfo: ConstraintInfo;
+}
+
+export interface ConstraintInfo {
+	ConstraintType: ConstraintTypes;
+}
+
+export const CCDIKController: CCDIKConstructor;
