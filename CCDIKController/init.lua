@@ -608,4 +608,4 @@ function CCDIKController:Destroy()
 	self = nil
 end
 
-return CCDIKController
+return { CCDIKController = CCDIKController }
