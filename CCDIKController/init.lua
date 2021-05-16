@@ -293,7 +293,7 @@ function CCDIKController:CCDIKIterateUntil(goalPosition,tolerance,maxBreakCount,
 	end
 end
 
-function CCDIKController.rotateJointFromTo(motor6DJoint,u,v,axis)
+function CCDIKController:rotateJointFromTo(motor6DJoint,u,v,axis)
 	local rotationCFrame = getRotationBetween(u,v,axis)
 	local applyRotationToPart1 = rotationCFrame*motor6DJoint.Part1.CFrame
 	rotationCFrame = motor6DJoint.Part0.CFrame:Inverse()*applyRotationToPart1
@@ -343,7 +343,7 @@ function CCDIKController:RotateFromEffectorToGoal(motor6d : Motor6D,goalPosition
 		self.VisualizeVector(jointWorldPosition,goalPosition - jointWorldPosition,BrickColor.Red())
 	end
 	if self.LerpMode ~= true then
-		self.rotateJointFromTo(motor6d,directionToEffector,directionToGoal,part0CF.RightVector)
+		self:rotateJointFromTo(motor6d,directionToEffector,directionToGoal,part0CF.RightVector)
 	else
 		self:rotateJointFromToWithLerp(motor6d,directionToEffector,directionToGoal,part0CF.RightVector,step)
 	end
@@ -371,7 +371,7 @@ function CCDIKController:RotateToHingeAxis(motor6d : Motor6D,jointConstraintInfo
 	local currentHingeAxis = jointAttachment.WorldAxis 
 
 	--Enforce hinge axis, has to be instantaneous
-	self.rotateJointFromTo(motor6d,currentHingeAxis,hingeAxis,part0CF.RightVector)
+	self:rotateJointFromTo(motor6d,currentHingeAxis,hingeAxis,part0CF.RightVector)
 
 	--Then enforce hinge constraints
 	local axisCFrame = axisAttachment.WorldCFrame
@@ -426,7 +426,7 @@ function CCDIKController:RotateToBallSocketConstraintAxis(motor6d,jointConstrain
 		local axis = currentCenterAxis:Cross(centerAxis)
 		local angleDifference = angleDifference-constraintUpperAngle
 		local newCenterAxisWithinBounds = rotateVectorAround( currentCenterAxis, angleDifference, axis )
-		self.rotateJointFromTo(motor6d,currentCenterAxis,newCenterAxisWithinBounds,part0CF.RightVector)
+		self:rotateJointFromTo(motor6d,currentCenterAxis,newCenterAxisWithinBounds,part0CF.RightVector)
 	end
 
 	--Now enforce twist limits
