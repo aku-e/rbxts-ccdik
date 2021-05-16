@@ -1,5 +1,5 @@
 # `aku-e/rbxts-ccdik`
-Ported roblox-ts package of datlass's [CCDIK](https://github.com/datlass/Rbx-CCDIK) module.
+Added TypeScript typings of datlass's [CCDIK](https://github.com/datlass/Rbx-CCDIK) module, so it can be used with roblox-ts.
 
 # Usage
 There is two exported types: CCDIKController and ConstraintInfo.
