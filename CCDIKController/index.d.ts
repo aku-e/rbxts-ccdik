@@ -4,6 +4,7 @@ type CCDIKController = {
 	Constraints: ConstraintsMap | undefined;
 	LerpMode: boolean;
 	DebugMode: boolean;
+	EndEffector: Attachment;
 	LerpAlpha: number;
 	ConstantLerpSpeed: boolean;
 	AngularSpeed: number;
