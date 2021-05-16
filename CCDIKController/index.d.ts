@@ -15,7 +15,7 @@ type CCDIKController = {
 
 	GetConstraints(): void;
 	GetConstraintsFromMotor(Motor6D: Motor6D, constraintName: string): void;
-	CCDIKIterateOnce(goalPosition: Vector3, tolerance: number | undefined, step: number): void;
+	CCDIKIterateOnce(goalPosition: Vector3, tolerance: number | 1, step: number): void;
 	CCDIKIterateUntil(
 		goalPosition: Vector3,
 		tolerance: number | undefined,
