@@ -12,7 +12,7 @@
   "scripts": {},
   "license": "ISC",
   "files": [
-    "src"
+    "CCDIKController"
   ],
   "publishConfig": {
     "access": "public"
