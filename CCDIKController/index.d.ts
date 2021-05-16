@@ -21,8 +21,16 @@ type CCDIKController = {
 		maxBreakCount: number | undefined,
 		step: number,
 	): void;
+	rotateJointFromTo(Motor6D: Motor6D, u: Vector3, v: Vector3, axis: Vector3): void;
+	rotateJointFromToWithLerp(Motor6D: Motor6D, u: Vector3, v: Vector3, axis: Vector3, step: number): void;
 	SetupFoot(attachmentNameTable: Array<string>, raycastParams: RaycastParams): void;
+	SetupJoints(): void;
+	RotateFromEffectorToGoal(Motor6D: Motor6D, goalPosition: Vector3, step: number): void;
+	OrientFootMotorToFloor(Motor6D: Motor6D, step: number): void;
+	RotateToHingeAxis(Motor6D: Motor6D, constraintInfo: ConstraintInfo): void;
+	RotateToBallSocketConstraintAxis(Motor6D: Motor6D, constraintInfo: ConstraintInfo): void;
 	InitDragDebug(): void;
+	Destroy(): void;
 };
 
 interface CCDIKConstructor {
