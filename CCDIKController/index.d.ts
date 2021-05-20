@@ -36,8 +36,6 @@ type CCDIKController = {
 
 interface CCDIKConstructor {
 	new (Motor6DArray: Array<Motor6D>, ConstraintsDictionary?: ConstraintsMap): CCDIKController;
-
-	ConstraintInfo: ConstraintInfo;
 }
 
 export interface ConstraintInfo {
